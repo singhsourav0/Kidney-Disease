@@ -2,7 +2,68 @@
 
 ## 🌟 Workflows Overview
 
-Workflows in this project simplify kidney disease classification by organizing tasks into clear, actionable steps. They ensure reproducibility, traceability, and efficient deployment, following MLOps best practices.
+Workflows in this project simplify kidney disease classification by organizing tasks into clear, actionable steps. They ensure reproducibility, traceability, and efficient deployment, following MLOps best practices# Project: Kidney Disease Prediction
+
+## Directory Structure
+
+```plaintext
+singhsourav0-kidney-disease/
+├── README.md
+├── LICENSE
+├── dvc.yaml
+├── init_setup.sh
+├── main.py
+├── params.yaml
+├── pyproject.toml
+├── requirements.txt
+├── requirements_dev.txt
+├── setup.cfg
+├── setup.py
+├── templates.py
+├── tox.ini
+├── configs/
+│   └── config.yaml
+├── logs/
+├── research/
+│   ├── 01_data_ingestion.ipynb
+│   ├── 02_prepare_base_model.ipynb
+│   ├── kidney-CT-Scan-data.zip
+│   └── trials.ipynb
+├── src/
+│   └── CNNclassifier/
+│       ├── __init__.py
+│       ├── __pycache__/
+│       ├── components/
+│       │   ├── __init__.py
+│       │   ├── data_ingestion.py
+│       │   └── prepare_model.py
+│       ├── config/
+│       │   ├── __init__.py
+│       │   └── configuration.py
+│       ├── constants/
+│       │   └── __init__.py
+│       ├── entity/
+│       │   ├── __init__.py
+│       │   └── config_entity.py
+│       ├── pipeline/
+│       │   ├── __init__.py
+│       │   ├── stage_01_data_ingestion.py
+│       │   └── stage_02_prepare_base_model.py
+│       └── utils/
+│           ├── __init__.py
+│           └── common.py
+├── tests/
+│   ├── __init__.py
+│   ├── integration/
+│   │   └── __init__.py
+│   └── unit/
+│       └── __init__.py
+└── .github/
+    └── workflows/
+        └── .gitkeep
+```
+
+
 
 ## 📊 Workflows
 
