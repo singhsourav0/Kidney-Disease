@@ -79,6 +79,7 @@ class ConfigurationManager:
 
         return training_config
     
+    
 
 
     def get_evaluation_config(self) -> EvaluationConfig:
