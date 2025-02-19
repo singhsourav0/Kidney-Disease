@@ -539,3 +539,212 @@ x==========x]
 [2025-02-19 21:46:24,600: INFO: main: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x]
+[2025-02-19 23:51:36,513: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-02-19 23:51:36,523: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-19 23:51:36,536: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-19 23:51:36,536: INFO: common: created directory at: artifacts_root]
+[2025-02-19 23:51:36,540: INFO: common: created directory at: artifacts_root/data_ingestion]
+[2025-02-19 23:51:36,542: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts_root/data_ingestion/data.zip]
+[2025-02-19 23:53:45,538: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-02-19 23:53:45,541: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-19 23:53:45,554: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-19 23:53:45,555: INFO: common: created directory at: artifacts_root]
+[2025-02-19 23:53:45,555: INFO: common: created directory at: artifacts_root/data_ingestion]
+[2025-02-19 23:53:45,557: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts_root/data_ingestion/data.zip]
+[2025-02-19 23:55:22,700: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts_root/data_ingestion/data.zip]
+[2025-02-19 23:55:24,918: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-02-19 23:57:30,182: INFO: stage_02_prepare_base_model: *******************]
+[2025-02-19 23:57:30,183: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare Base Model started <<<<<<]
+[2025-02-19 23:57:30,186: INFO: stage_02_prepare_base_model: Prepare Base Model started]
+[2025-02-19 23:57:30,192: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-19 23:57:30,215: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-19 23:57:30,225: INFO: common: created directory at: artifacts_root]
+[2025-02-19 23:57:30,239: INFO: common: created directory at: artifacts_root/prepare_base_model]
+[2025-02-19 23:57:32,554: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-19 23:57:32,995: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-19 23:57:33,252: INFO: stage_02_prepare_base_model: Prepare Base Model completed]
+[2025-02-19 23:57:52,446: INFO: stage_03_model_training: *******************]
+[2025-02-19 23:57:52,447: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-02-19 23:57:52,450: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-19 23:57:52,467: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-19 23:57:52,470: INFO: common: created directory at: artifacts_root]
+[2025-02-19 23:57:52,472: INFO: common: created directory at: artifacts_root\training]
+[2025-02-20 00:05:18,476: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-20 00:05:18,866: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-02-20 00:05:44,632: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-20 00:05:44,637: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:05:44,643: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:05:44,644: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:05:45,245: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-20 00:06:39,603: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:07:13,769: ERROR: stage_04_model_evaluation_with_mlflow: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`]
+Traceback (most recent call last):
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 33, in <module>
+    obj.main()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 24, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\components\model_evaluation_mlflow.py", line 73, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\keras\save.py", line 339, in log_model
+    return Model.log(
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\models\model.py", line 846, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path, run_id)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\fluent.py", line 1219, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\client.py", line 1982, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 875, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 817, in _get_artifact_repo
+    artifact_repo = get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 131, in get_artifact_repository
+    return _artifact_repository_registry.get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 76, in get_artifact_repository
+    return repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 51, in __init__
+    super().__init__(self.resolve_uri(artifact_uri, get_tracking_uri()))
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 65, in resolve_uri
+    _validate_uri_scheme(track_parse)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 35, in _validate_uri_scheme
+    raise MlflowException(
+mlflow.exceptions.MlflowException: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`
+[2025-02-20 00:13:18,797: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-20 00:13:18,800: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:13:18,809: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:13:18,810: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:13:19,406: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-20 00:14:15,949: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:14:46,401: ERROR: stage_04_model_evaluation_with_mlflow: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`]
+Traceback (most recent call last):
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 33, in <module>
+    obj.main()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 24, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\components\model_evaluation_mlflow.py", line 73, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\keras\save.py", line 339, in log_model
+    return Model.log(
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\models\model.py", line 846, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path, run_id)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\fluent.py", line 1219, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\client.py", line 1982, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 875, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 817, in _get_artifact_repo
+    artifact_repo = get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 131, in get_artifact_repository
+    return _artifact_repository_registry.get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 76, in get_artifact_repository
+    return repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 51, in __init__
+    super().__init__(self.resolve_uri(artifact_uri, get_tracking_uri()))
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 65, in resolve_uri
+    _validate_uri_scheme(track_parse)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 35, in _validate_uri_scheme
+    raise MlflowException(
+mlflow.exceptions.MlflowException: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`
+[2025-02-20 00:19:36,196: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-20 00:19:36,207: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:19:36,211: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:19:36,213: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:19:36,795: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-20 00:21:01,229: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:21:34,754: ERROR: stage_04_model_evaluation_with_mlflow: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`]
+Traceback (most recent call last):
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 33, in <module>
+    obj.main()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\pipeline\stage_04_model_evaluation_with_mlflow.py", line 24, in main
+    evaluation.log_into_mlflow()
+  File "C:\Users\Dell\python\PROJECT\MLOPS\Kidney-Disease\src\CNNclassifier\components\model_evaluation_mlflow.py", line 73, in log_into_mlflow
+    mlflow.keras.log_model(self.model, "model")
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\keras\save.py", line 339, in log_model
+    return Model.log(
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\models\model.py", line 846, in log
+    mlflow.tracking.fluent.log_artifacts(local_path, mlflow_model.artifact_path, run_id)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\fluent.py", line 1219, in log_artifacts
+    MlflowClient().log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\client.py", line 1982, in log_artifacts
+    self._tracking_client.log_artifacts(run_id, local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 875, in log_artifacts
+    self._get_artifact_repo(run_id).log_artifacts(local_dir, artifact_path)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\tracking\_tracking_service\client.py", line 817, in _get_artifact_repo
+    artifact_repo = get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 131, in get_artifact_repository
+    return _artifact_repository_registry.get_artifact_repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\artifact_repository_registry.py", line 76, in get_artifact_repository
+    return repository(artifact_uri)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 51, in __init__
+    super().__init__(self.resolve_uri(artifact_uri, get_tracking_uri()))
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 65, in resolve_uri
+    _validate_uri_scheme(track_parse)
+  File "C:\Users\Dell\anaconda3\envs\deep\lib\site-packages\mlflow\store\artifact\mlflow_artifacts_repo.py", line 35, in _validate_uri_scheme
+    raise MlflowException(
+mlflow.exceptions.MlflowException: When an mlflow-artifacts URI was supplied, the tracking URI must be a valid http or https URI, but it was currently set to file:///C:/Users/Dell/python/PROJECT/MLOPS/Kidney-Disease/mlruns. Perhaps you forgot to set the tracking URI to the running MLflow server. To set the tracking URI, use either of the following methods:
+1. Set the MLFLOW_TRACKING_URI environment variable to the desired tracking URI. `export MLFLOW_TRACKING_URI=http://localhost:5000`
+2. Set the tracking URI programmatically by calling `mlflow.set_tracking_uri`. `mlflow.set_tracking_uri('http://localhost:5000')`
+[2025-02-20 00:34:59,891: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2025-02-20 00:34:59,891: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:34:59,910: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:34:59,911: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:34:59,914: INFO: common: created directory at: artifacts_root/data_ingestion]
+[2025-02-20 00:34:59,914: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts_root/data_ingestion/data.zip]
+[2025-02-20 00:36:35,357: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1vlhZ5c7abUKF8xXERIw6m9Te8fW7ohw3/view?usp=sharing into file artifacts_root/data_ingestion/data.zip]
+[2025-02-20 00:36:36,984: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2025-02-20 00:36:57,731: INFO: stage_02_prepare_base_model: *******************]
+[2025-02-20 00:36:57,731: INFO: stage_02_prepare_base_model: >>>>>> stage Prepare Base Model started <<<<<<]
+[2025-02-20 00:36:57,731: INFO: stage_02_prepare_base_model: Prepare Base Model started]
+[2025-02-20 00:36:57,731: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:36:57,750: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:36:57,752: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:36:57,753: INFO: common: created directory at: artifacts_root/prepare_base_model]
+[2025-02-20 00:36:59,481: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-20 00:36:59,884: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-20 00:37:00,097: INFO: stage_02_prepare_base_model: Prepare Base Model completed]
+[2025-02-20 00:37:16,743: INFO: stage_03_model_training: *******************]
+[2025-02-20 00:37:16,743: INFO: stage_03_model_training: >>>>>> stage Training started <<<<<<]
+[2025-02-20 00:37:16,760: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:37:16,769: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:37:16,770: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:37:16,771: INFO: common: created directory at: artifacts_root\training]
+[2025-02-20 00:42:00,790: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2025-02-20 00:42:01,022: INFO: stage_03_model_training: >>>>>> stage Training completed <<<<<<
+
+x==========x]
+[2025-02-20 00:43:34,940: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-20 00:43:34,940: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:43:34,957: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:43:34,959: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:43:35,556: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-20 00:44:16,174: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:47:53,561: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:47:53,561: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]
+[2025-02-20 00:49:31,931: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage started <<<<<<]
+[2025-02-20 00:49:31,931: INFO: common: yaml file: configs\config.yaml loaded successfully]
+[2025-02-20 00:49:31,946: INFO: common: yaml file: params.yaml loaded successfully]
+[2025-02-20 00:49:31,948: INFO: common: created directory at: artifacts_root]
+[2025-02-20 00:49:32,598: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2025-02-20 00:50:19,503: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:52:39,156: INFO: common: JSON file saved at: scores.json]
+[2025-02-20 00:52:39,156: INFO: stage_04_model_evaluation_with_mlflow: >>>>>> stage Evaluation stage completed <<<<<<
+
+x==========x]

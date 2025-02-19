@@ -1,3 +1,14 @@
+import os
+import sys  # This ensures the environment is set before MLflow runs
+
+import mlflow
+print("Using MLflow Tracking URI:", mlflow.get_tracking_uri())
+
+# Your MLflow experiment and logging code
+
+# Ensure Python can find the 'src' directory
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
+from src import mlflow_setup
 from src.CNNclassifier.config.configuration import ConfigurationManager
 from src.CNNclassifier.components.model_evaluation_mlflow import Evaluation
 from src.CNNclassifier import logger
@@ -17,6 +28,7 @@ class EvaluationPipeline:
         evaluation.evaluation()
         evaluation.log_into_mlflow()
         evaluation.save_score()
+
 
 
 if __name__ == '__main__':

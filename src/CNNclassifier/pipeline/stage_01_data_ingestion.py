@@ -1,3 +1,9 @@
+import os
+import sys
+
+# Ensure Python can find the 'src' directory
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../../..")))
+
 from src.CNNclassifier.config.configuration import ConfigurationManager
 from src.CNNclassifier.components.data_ingestion import DataIngestion
 from src.CNNclassifier import logger
