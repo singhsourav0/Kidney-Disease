@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 import os
 from werkzeug.utils import secure_filename
 from src.CNNclassifier.pipeline.prediction import PredictionPipeline  # Ensure correct import
+from src.CNNclassifier.utils.common import decodeImage
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -26,32 +27,46 @@ def home():
 @app.route("/train", methods=['GET', 'POST'])
 @cross_origin()
 def trainRoute():
-    os.system("dvc repro")  # Ensure DVC is set up properly
+    # os.system("dvc repro")  # Ensure DVC is set up properly
+    os.system("python main.py")
     return "Training done successfully!"
+
+# @app.route("/predict", methods=['POST'])
+# @cross_origin()
+# def predictRoute():
+#     if "image" not in request.files:
+#         return jsonify({"error": "No image uploaded"}), 400
+    
+#     image_file = request.files["image"]
+#     if image_file.filename == "":
+#         return jsonify({"error": "No selected file"}), 400
+
+#     # Save the uploaded image
+#     filename = secure_filename(image_file.filename)
+#     filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+#     image_file.save(filepath)
+
+#     # Run prediction
+#     clApp.filename = filepath  # Update filename dynamically
+#     clApp.classifier = PredictionPipeline(clApp.filename)
+#     result = clApp.classifier.predict()
+
+#     return jsonify({"prediction": result[0]["image"]})  # Format response properly
+
+# if __name__ == "__main__":
+#     clApp = ClientApp()
+#     app.run(host="0.0.0.0", port=8080, debug=True)
 
 @app.route("/predict", methods=['POST'])
 @cross_origin()
 def predictRoute():
-    if "image" not in request.files:
-        return jsonify({"error": "No image uploaded"}), 400
-    
-    image_file = request.files["image"]
-    if image_file.filename == "":
-        return jsonify({"error": "No selected file"}), 400
-
-
-
-    filename = secure_filename(image_file.filename)
-    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
-    image_file.save(filepath)
-
-    # Run prediction
-    clApp.filename = filepath  # Update filename dynamically
-    clApp.classifier = PredictionPipeline(clApp.filename)
+    image = request.json['image']
+    decodeImage(image, clApp.filename)
     result = clApp.classifier.predict()
+    return jsonify(result)
 
-    return jsonify({"prediction": result[0]["image"]})  # Format response properly
 
 if __name__ == "__main__":
     clApp = ClientApp()
-    app.run(host="0.0.0.0", port=8080, debug=True)
+
+    app.run(host='0.0.0.0', port=8080) #for AWS
