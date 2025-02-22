@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload & Prediction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
+        <h2 class="text-xl font-bold mb-4">Upload an Image</h2>
+        <input type="file" id="imageInput" class="hidden" accept="image/*">
+        <label for="imageInput" class="cursor-pointer bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Choose File</label>
+        <div id="previewContainer" class="mt-4 hidden">
+            <img id="imagePreview" class="max-w-full max-h-48 mx-auto"/>
+        </div>
+        <button id="uploadBtn" class="mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Upload & Predict</button>
+        <div id="loading" class="hidden mt-4">Processing...</div>
+        <div id="predictionResult" class="mt-4 text-lg font-semibold"></div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('#imageInput').change(function(event) {
+                let file = event.target.files[0];
+                if (file) {
+                    let reader = new FileReader();
+                    reader.onload = function(e) {
+                        $('#imagePreview').attr('src', e.target.result);
+                        $('#previewContainer').removeClass('hidden');
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            $('#uploadBtn').click(function(){
+                let file = $('#imageInput')[0].files[0];
+                if (!file) {
+                    alert('Please select an image first!');
+                    return;
+                }
+                
+                let formData = new FormData();
+                formData.append('image', file);
+                
+                $('#loading').removeClass('hidden');
+                $('#predictionResult').text('');
+                
+                $.ajax({
+                    url: '/predict',  // Flask API endpoint
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        $('#loading').addClass('hidden');
+                        $('#predictionResult').text('Prediction: ' + response.prediction);
+                    },
+                    error: function() {
+                        $('#loading').addClass('hidden');
+                        $('#predictionResult').text('Error processing image');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
