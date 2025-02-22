@@ -39,7 +39,8 @@ def predictRoute():
     if image_file.filename == "":
         return jsonify({"error": "No selected file"}), 400
 
-    # Save the uploaded image
+
+
     filename = secure_filename(image_file.filename)
     filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
     image_file.save(filepath)
